@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRUD Operations</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+        body{
+           background-image: url('/static/images/crudpage.webp');
+           background-attachment: fixed;
+           background-repeat: no-repeat;
+           background-size: cover;
+           list-style-type: none;
+           text-decoration: none;
+        }
+        a{
+            text-decoration: none;
+
+        }
+        #new_item{
+            font-size: 20px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight:bold;
+            color:darkred;
+            padding:3px;
+        }
+        #new_item:hover{
+            cursor:pointer;
+            color:rgb(245, 241, 5);
+            letter-spacing: 2px;
+        }
+        #list{
+           
+            width:300px;
+            height:auto;
+            padding:6px;
+            font-size:20px;
+           
+        }
+        .edit{
+            padding:5px;
+        }
+        .edit:hover{
+            letter-spacing: 2px;
+            color:rgb(248, 252, 17);
+            text-decoration: underline;
+        }
+        .edit:visited{
+            color:rgb(4, 97, 4);
+        }
+
+   </style>
+</head>
+<body>
+    <h2>CRUD Operations</h2>
+    <a href="{% url 'create_item' %}" id="new_item">Create New Item</a>
+    <ul style="list-style-type: none;" id="list">
+        {% for item in items %}
+            <li>{{ item.name }} - <a href="{% url 'update_item' item.id %}" class="edit">Update</a> | 
+            <a href="{% url 'delete_item' item.id %}" class="edit">Delete</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

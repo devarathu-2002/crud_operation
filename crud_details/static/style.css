@@ -1,0 +1,50 @@
+label{
+    color:rgb(247, 83, 7);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+h2{
+    text-align:center;
+    color:rgb(12, 236, 252);
+    text-decoration: underline;
+}
+#loginBtn{
+    border:2px solid rgb(183, 230, 15);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width:70px;
+    padding:5px;
+    color:darkred;
+    margin-left:120px;
+    border-radius:3px;
+    box-shadow: 2px 2px 2px rgb(14, 14, 13);
+}
+#loginBtn:hover{
+    cursor: pointer;
+    background-color: aqua;
+}
+#username{
+    border:2px solid rgb(183, 243, 105);
+    padding:2px;
+    background-color: aliceblue;
+    
+}
+#password{
+    border:2px solid rgb(183, 243, 105);
+    padding:2px;
+    background-color: aliceblue;
+}
+form{
+    border:2px dashed rgb(243, 8, 153);
+    padding:20px;
+    width:300px;
+    margin:auto;
+    margin-top:220px;
+    border-radius:2px;
+}
+#list{
+    color:aqua;
+}
+#edit{
+    text-decoration: none;
+    color:brown;
+}

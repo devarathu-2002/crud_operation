@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Item</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+<style>
+    body{
+        background-image: url('/static/images/create.jpeg');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        list-style-type: none;
+        text-decoration: none;
+    }
+    #name{
+        border:2px solid black;
+        background-color:beige;
+    }
+    #description{
+        border:2px solid black;
+        background-color:beige;
+    }
+    #create{
+        border:2px solid black;
+        margin-left:100px;
+        padding:5px;
+        color: cadetblue;
+        
+    }
+    #create:hover{
+        background-color: antiquewhite;
+        cursor:pointer;
+    }
+</style>
+</head>
+<body>
+    <h2>Create New Item</h2>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required autocomplete="off"><br><br>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea><br><br>
+
+        <input type="submit" value="Create" id="create">
+    </form>
+</body>
+</html>

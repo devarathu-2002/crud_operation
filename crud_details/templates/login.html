@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+         body{
+            background-image: url('/static/images/login1.jpeg');
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            list-style-type: none;
+            text-decoration: none;
+         }
+    </style>
+</head>
+<body>
+    <h2>Login Page</h2>
+    
+    <form method="POST" action="">
+        {% csrf_token %}
+        <label for="username">Username :</label>
+        <input type="text" id="username" name="username" required autocomplete="off"><br><br>
+        <label for="password">Password :</label>
+        <input type="password" id="password" name="password" required autocomplete="off"><br><br>
+        <input type="submit" value="Login" id="loginBtn">
+    </form>
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    <script>
+        document.getElementById("loginBtn").addEventListener("click", function() {
+            alert("Login button clicked");
+        });
+    </script>
+    
+</body>
+
+</html>

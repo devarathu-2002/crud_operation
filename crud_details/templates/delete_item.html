@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Item</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+<style>
+    body{
+        background-image: url('/static/images/delete.jpg');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        list-style-type: none;
+        text-decoration: none;
+    }
+   #delete{
+    border:2px solid black;
+    padding:5px;
+    color:rgb(255, 0, 0);
+    border-radius:4px;
+    margin-left:90px;
+    font-size:18px;
+   }
+   #delete:hover{
+    cursor:pointer;
+    color:brown;
+   }
+   a{
+    text-decoration:none;
+    font-size: 17px;
+    color:green;
+   }
+   a:hover{
+    color:darkgoldenrod;
+
+   }
+   p{
+    font-size: 20px;
+    color:rgb(117, 255, 4);
+   }
+   
+</style>
+</head>
+<body>
+    <h2>Delete Item</h2>
+    <p>Are you sure you want to delete the item "{{ item.name }}"?</p>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <input type="submit" value="Yes, Delete" id="delete">
+        <br>
+        <a href="{% url 'crud' %}">Cancel</a>
+    </form>
+</body>
+</html>
